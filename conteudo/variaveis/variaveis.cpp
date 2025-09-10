@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string> //inclui dado do tipo string
+#include <string> //inclui tipo de dado string
 using namespace std;
 
 int main() {
