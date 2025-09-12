@@ -2,8 +2,6 @@
 using namespace std;
 
 int main() {
-    int n1, n2;
-
     /*
     Incrementos e decrementos:
     Variável++ - adiciona 1
@@ -16,6 +14,8 @@ int main() {
     Pós-fixado: n1++ - primeiro imprime, depois incrementa
     Pré-fixado: ++n1 - primeiro incrementa, depois imprime
     */
+
+    int n1, n2;
 
     n1 = 0;
     n2 = 10;
