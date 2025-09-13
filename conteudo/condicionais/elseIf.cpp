@@ -6,7 +6,7 @@ int main() {
     int n1, n2, res;
     char opc;
 
-    inicio: //criação label
+    inicio:
 
     system("cls"); //Executa comando no terminal
 
