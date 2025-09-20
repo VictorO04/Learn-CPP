@@ -2,45 +2,77 @@
 #include <cstdlib>
 using namespace std;
 
-int main() {
-    double num1, num2, res;
-    char operacao, opc;
+double num1, num2, resultado;
 
-    inicio:
+void adicao() {
+    resultado = num1 + num2;
+    cout << num1 << " + " << num2 << " = " << resultado;
+}
 
-    system("cls");
+void subtracao() {
+    resultado = num1 - num2;
+    cout << num1 << " - " << num2 << " = " << resultado;
+}
 
-    cout << "Escolha o sinal da conta que deseja realizar (+ - * /): ";
-    cin >> operacao;
-    cout << "Digite o primeiro numero: ";
-    cin >> num1;
-    cout << "Digite o segundo numero: ";
-    cin >> num2;
+void multiplicacao() {
+    resultado = num1 * num2;
+    cout << num1 << " * " << num2 << " = " << resultado;
+}
 
-    if (operacao == '+') {
-        res = num1 + num2;
-        cout << num1 << " + " << num2 << " = " << res << "\n";
-    } else if (operacao == '-') {
-        res = num1 - num2;
-        cout << num1 << " - " << num2 << " = " << res << "\n";
-    } else if (operacao == '*') {
-        res = num1 * num2;
-        cout << num1 << " * " << num2 << " = " << res << "\n";
-    } else if (operacao == '/') {
-        if (num2 == 0) {
-            cout << "Erro: divisao por zero nao e permitida\n";
-        } else {
-            res = num1 / num2;
-            cout << num1 << " / " << num2 << " = " << res << "\n";
-        }
+void divisao() {
+    if (num2 == 0) {
+        cout << "Divisao por zero e invalida.";
     } else {
-        cout << "Operacao invalida\n";
+        resultado = num1 / num2;
+        cout << num1 << " / " << num2 << " = " << resultado;
     }
+}
 
-    cout << "\nDeseja reiniciar? (s/n) ";
-    cin >> opc;
+int main() {
+    char opc;
 
-    if (opc == 's' or opc == 'S') {
-        goto inicio;
-    }
+    do {
+        char operacao;
+
+        system("cls");
+
+        cout << "-- Calculadora --\n\n";
+        cout << "Digite o primeiro numero: ";
+        cin >> num1;
+
+        while (true) {
+            cout << "Escolha a operacao (+, -, *, /): ";
+            cin >> operacao;
+
+            if (operacao == '+') {
+                break;
+            } else if (operacao == '-') {
+                break;
+            } else if (operacao == '*') {
+                break;
+            } else if (operacao == '/') {
+                break;
+            } else {
+                cout << "operacao invalida\n\n";
+            }
+        }
+    
+        cout << "Digite o segundo numero: ";
+        cin >> num2;
+
+        if (operacao == '+') {
+            adicao();
+        } else if (operacao == '-') {
+            subtracao();
+        } else if (operacao == '*') {
+            multiplicacao();
+        } else if (operacao == '/') {
+            divisao();
+        } else {
+            cout << "Operacao invalida.\n";
+        }
+
+        cout << "\nDeseja reiniciar? (s/n) ";
+        cin >> opc;
+    } while (opc != 'n' && opc != 'N');
 }
